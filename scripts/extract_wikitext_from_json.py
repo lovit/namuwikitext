@@ -2,6 +2,7 @@ import json
 import os
 import re
 from glob import glob
+from multiprocessing import Pool
 from tqdm import tqdm
 
 
@@ -131,19 +132,24 @@ def check_dir(path):
         os.makedirs(dirname)
 
 
+def transform(inpath):
+    with open(inpath) as f:
+        data = json.load(f)
+    wikitext, has_text = get_wikitext_from(data)
+    if not has_text:
+        return
+    outpath = inpath.replace(data_root, text_root)[:-4] + 'txt'
+    check_dir(outpath)
+    with open(outpath, 'w', encoding='utf-8') as f:
+        f.write(wikitext)
+
+
 ## SCRIPTS ##
 data_root = os.path.abspath('./data/')
 text_root = os.path.abspath('./text/')
 paths = glob(f'{data_root}/*/*.json')
 print(f'Found {len(paths)} json files')
 
-for inpath in tqdm(paths, desc='Extract wikitext', total=len(paths)):
-    with open(inpath) as f:
-        data = json.load(f)
-    wikitext, has_text = get_wikitext_from(data)
-    if not has_text:
-        continue
-    outpath = inpath.replace(data_root, text_root)[:-4] + 'txt'
-    check_dir(outpath)
-    with open(outpath, 'w', encoding='utf-8') as f:
-        f.write(wikitext)
+iterator = tqdm(paths, desc='Extract wikitext', total=len(paths))
+with Pool(20) as p:
+    print(p.map(transform, iterator, chunksize=100))
