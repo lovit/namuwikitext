@@ -76,6 +76,8 @@ def normalize(s):
     if lines[-1][:3] == '분류:':
         lines = lines[:-1]
     lines = [line for line in lines if line]
+    if not lines:
+        return ''
     s = '\n'.join(lines)
     if lines[0][:9] == '#redirect':
         return ''
