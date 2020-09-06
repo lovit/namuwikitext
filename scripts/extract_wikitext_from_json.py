@@ -20,7 +20,7 @@ def split(s, begin_marker, end_marker):
 
 
 def detach_links(s):
-    while '[[' in s and ']]' in s:
+    while ('[[' in s) and (']]' in s[s.index('[['): ]):
         prefix, sub, suffix = split(s, '[[', ']]')
         if sub[:2] == '파일':
             sub = ''
@@ -42,6 +42,7 @@ def remove_markers(s, begin_marker, end_marker):
         prefix, sub, suffix = split(s, begin_marker, end_marker)
         s = f'{prefix} {suffix}'
     return s
+
 
 def space_markers(s, begin_marker, end_marker):
     s = s.replace(begin_marker, f' {begin_marker} ')
@@ -83,7 +84,7 @@ def normalize(s):
     if lines[0][:9] == '#redirect':
         return ''
     s = doubleline_pattern.sub('\n\n', s).strip()
-    if s[0] == '=':
+    if s and s[0] == '=':
         s = f' {s}'
     return s
 
@@ -157,4 +158,4 @@ print(f'Found {len(paths)} json files')
 
 iterator = tqdm(paths, desc='Extract wikitext', total=len(paths))
 with Pool(20) as p:
-    print(p.map(transform, iterator, chunksize=100))
+    p.map(transform, iterator, chunksize=100)
