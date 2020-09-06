@@ -18,3 +18,22 @@ In `data_root`
 ├── 998
 └── 999
 ```
+
+To extract multiline (wikitext format) text, run following script. Check `data_root` and `text_root` in `extract_wikitext_from_json.py`.
+
+```
+python extract_wikitext_from_json.py
+```
+
+Snapshot of `text_root`. Redirected pages are removed
+
+```
+├── 000
+|    ├── ...
+|    ├── 97000.txt
+|    ├── 98000.txt
+|    └── 99000.txt
+├── ...
+├── 998
+└── 999
+```
