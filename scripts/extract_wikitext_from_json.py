@@ -106,6 +106,11 @@ def postprocess_each_line(s):
         s = s[:-3].strip()
     if s[-2:] == '||':
         s = s[:-2].strip()
+    s = s.replace('· ·', '')
+    s = s.replace('{{', '')
+    s = s.replace('}}', '')
+    if s[:3] == '분류:':
+        s = ''
     s = doublespace_pattern.sub(' ', s)
     if s[:2] == ' =' and s[-2:] == ' =':
         s = f'\n{s}\n'
