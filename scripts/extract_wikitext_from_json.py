@@ -121,7 +121,7 @@ def get_wikitext_from(json_data):
         text = normalize(text)
     else:        
         text = normalize(text[text.index('=='):]) 
-    wikitext = f' = {title} =\n\n{text}'
+    wikitext = f' = {title} =\n\n{text}\n'
     has_text = len(text) > 0
     return wikitext, has_text
 
