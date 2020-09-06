@@ -2,6 +2,8 @@
 
 Wikitext format Korean corpus
 
+나무위키의 덤프 데이터를 바탕을 제작한 wikitext 형식의 텍스트 파일입니다. 학습 및 평가를 위하여 위키페이지 별로 train (99%), dev (0.5%), test (0.5%) 로 나눠뒀습니다.
+
 Corpus size
 - train: 38278040 lines (5.3G)
 - dev: 197723 lines (28M)
@@ -18,6 +20,8 @@ This corpus is licensed with `CC BY-NC-SA 2.0 KR` which Namuwiki is licensed. Fo
 ## Fetch and load using [Korpora](https://github.com/ko-nlp/Korpora)
 
 Korpora is Korean Corpora Archives, implemented based on Python. We will provide the fetch / load function at `Korpora`
+
+이 코퍼스는 [`Korpora`](https://github.com/ko-nlp/Korpora) 프로젝트에서 사용할 수 있도록 작업 중입니다.
 
 (Soon)
 ```
