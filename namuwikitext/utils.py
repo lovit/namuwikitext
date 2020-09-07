@@ -22,9 +22,9 @@ local_texts = {
 }
 
 NAMUWIKITEXT_URLS = {
-    'train': 'https://korpora-archive.s3.ap-northeast-2.amazonaws.com/namuwikitext/namuwikitext_20200302.train.zip',
-    'dev': 'https://korpora-archive.s3.ap-northeast-2.amazonaws.com/namuwikitext/namuwikitext_20200302.dev.zip',
-    'test': 'https://korpora-archive.s3.ap-northeast-2.amazonaws.com/namuwikitext/namuwikitext_20200302.test.zip'
+    'train': 'https://github.com/lovit/namuwikitext/releases/download/v0.1/namuwikitext_20200302.v0.1.train.zip',
+    'dev': 'https://github.com/lovit/namuwikitext/releases/download/v0.1/namuwikitext_20200302.v0.1.dev.zip',
+    'test': 'https://github.com/lovit/namuwikitext/releases/download/v0.1/namuwikitext_20200302.v0.1.test.zip'
 }
 
 
