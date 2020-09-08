@@ -37,3 +37,9 @@ Snapshot of `text_root`. Redirected pages are removed
 ├── 998
 └── 999
 ```
+
+Run below script to make `train`, `dev`, `test` dataset. Check `n_train`, `n_dev`, and `n_test` in `concatenate.py`
+
+```
+python concatenate.py
+```
