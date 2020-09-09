@@ -21,9 +21,8 @@ This corpus is licensed with `CC BY-NC-SA 2.0 KR` which Namuwiki is licensed. Fo
 
 Korpora is Korean Corpora Archives, implemented based on Python. We will provide the fetch / load function at `Korpora`
 
-이 코퍼스는 [`Korpora`](https://github.com/ko-nlp/Korpora) 프로젝트에서 사용할 수 있도록 작업 중입니다.
+이 코퍼스는 [`Korpora`](https://github.com/ko-nlp/Korpora) 프로젝트에서 사용할 수 있습니다.
 
-(Soon)
 ```
 from Korpora import Korpora
 
