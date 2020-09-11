@@ -7,7 +7,7 @@ Wikitext format Korean corpus
 Corpus size
 - train: 38278040 lines (500104 docs, 5.3G)
 - dev: 197723 lines (2525 docs, 28M)
-- test: 193614 lines (2525 docs, 29M)
+- test: 193614 lines (2527 docs, 29M)
 
 To fetch data, run below script. Then three corpus, train / dev / test files are downloaded at `./data/`
 
