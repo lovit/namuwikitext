@@ -8,6 +8,11 @@ from tqdm import tqdm
 
 doublespace_pattern = re.compile('\s+')
 doubleline_pattern = re.compile('\n{2,}')
+url_pattern = re.compile('((http|https)\:\/\/)?[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z]){2,6}([a-zA-Z0-9\.\&\/\?\:@\-_=#])*')
+
+
+def remove_url(s):
+    return url_pattern.sub(' ', s)
 
 
 def split(s, begin_marker, end_marker):
@@ -70,6 +75,7 @@ def normalize(s):
     s = remove_markers(s, '[br', ']')    
     s = remove_markers(s, '[ruby', ']')
     s = remove_markers(s, '[nicovideo', ']')
+    s = remove_url(s)
     s = space_markers(s, '(', ')')
     s = s.replace('[각주]', ' ')
     s = s.replace('( )', '')
