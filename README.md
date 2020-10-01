@@ -23,7 +23,7 @@ Korpora is Korean Corpora Archives, implemented based on Python. We will provide
 
 이 코퍼스는 [`Korpora`](https://github.com/ko-nlp/Korpora) 프로젝트에서 사용할 수 있습니다.
 
-```
+```python
 from Korpora import Korpora
 
 namuwikitext = Korpora.load('namuwikitext')
