@@ -19,7 +19,7 @@ This corpus is licensed with `CC BY-NC-SA 2.0 KR` which Namuwiki is licensed. Fo
 
 ## Fetch and load using [Korpora](https://github.com/ko-nlp/Korpora)
 
-Korpora is Korean Corpora Archives, implemented based on Python. We will provide the fetch / load function at `Korpora`
+Korpora is Korean Corpora Archives, implemented based on Python. We provide the fetch / load function at `Korpora`
 
 이 코퍼스는 [`Korpora`](https://github.com/ko-nlp/Korpora) 프로젝트에서 사용할 수 있습니다.
 
