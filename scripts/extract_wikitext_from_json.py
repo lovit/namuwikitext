@@ -17,7 +17,7 @@ def remove_url(s):
 
 def split(s, begin_marker, end_marker):
     b = s.index(begin_marker)
-    e = s.index(end_marker, b)
+    e = s.index(end_marker, b + len(begin_marker))
     prefix = s[:b]
     suffix = s[e + len(end_marker):]
     sub = s[b + len(begin_marker) : e]
@@ -157,8 +157,8 @@ def transform(inpath):
 
 
 ## SCRIPTS ##
-data_root = os.path.abspath('./data/')
-text_root = os.path.abspath('./text/')
+data_root = os.path.abspath('../../data/')
+text_root = os.path.abspath('../../text/')
 paths = glob(f'{data_root}/*/*.json')
 print(f'Found {len(paths)} json files')
 
