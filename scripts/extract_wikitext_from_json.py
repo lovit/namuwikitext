@@ -81,6 +81,8 @@ def normalize(s):
     s = s.replace('( )', '')
 
     lines = [postprocess_each_line(line) for line in s.split('\n') if line.strip()]
+    if not lines:
+        return ''
     if lines[-1][:3] == '분류:':
         lines = lines[:-1]
     lines = [line for line in lines if line]
